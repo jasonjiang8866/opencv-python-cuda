@@ -18,7 +18,7 @@ def main():
     is_CI_build = True if CI_BUILD == "1" else False
     cmake_source_dir = "opencv"
     minimum_supported_numpy = "1.13.3"
-    build_contrib = get_build_env_var_by_name("contrib")
+    build_contrib = True
     build_headless = get_build_env_var_by_name("headless")
     build_java = "ON" if get_build_env_var_by_name("java") else "OFF"
     build_rolling = get_build_env_var_by_name("rolling")
@@ -190,6 +190,14 @@ def main():
             "-DBUILD_DOCS=OFF",
             "-DPYTHON3_LIMITED_API=ON",
             "-DBUILD_OPENEXR=ON",
+            "-DWITH_CUDA=ON",
+            "-DWITH_CUDNN=ON",
+            "-DOPENCV_DNN_CUDA=ON",
+            "-DENABLE_FAST_MATH=1",
+            "-DCUDA_FAST_MATH=1",
+            "-DCUDA_ARCH_BIN=8.6",
+            "-DWITH_CUBLAS=1",
+            "-DCUDA_TOOLKIT_ROOT_DIR=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2",
         ]
         + (
             # CMake flags for windows/arm64 build
