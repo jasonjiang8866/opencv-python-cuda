@@ -12,5 +12,5 @@ requires = [
   "numpy==1.22.2; python_version>='3.11'",
   "pip",
   "scikit-build>=0.14.0",
-  "setuptools==59.2.0",
+  "setuptools==84.1.0",
 ]
